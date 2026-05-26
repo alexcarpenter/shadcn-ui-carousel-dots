@@ -7,36 +7,7 @@ import {
   useCarousel,
 } from "@/components/ui/carousel"
 
-const slides = [
-  {
-    eyebrow: "01 / Espresso",
-    title: "Dialed-in details",
-    description:
-      "Drag the carousel and watch the active dot hand off its emphasis to the next one.",
-    className: "from-amber-200 via-orange-300 to-rose-300",
-  },
-  {
-    eyebrow: "02 / Filter",
-    title: "Scroll progress driven",
-    description:
-      "Embla exposes scrollProgress(), so every indicator can interpolate as the track moves.",
-    className: "from-sky-200 via-cyan-300 to-emerald-300",
-  },
-  {
-    eyebrow: "03 / Cold brew",
-    title: "No active toggle jump",
-    description:
-      "The outgoing dot shrinks and lightens while the incoming dot grows and darkens.",
-    className: "from-violet-200 via-fuchsia-300 to-pink-300",
-  },
-  {
-    eyebrow: "04 / Cortado",
-    title: "CSS color-mix()",
-    description:
-      "A single --dot-progress custom property controls width and background color.",
-    className: "from-lime-200 via-green-300 to-teal-300",
-  },
-]
+const slides = ["bg-blue-500", "bg-orange-500", "bg-red-500", "bg-green-500"]
 
 type DotStyle = React.CSSProperties & {
   "--dot-progress": string
@@ -227,11 +198,9 @@ export function App() {
       <section className="w-full max-w-4xl">
         <Carousel opts={{ align: "start" }} className="mx-auto max-w-2xl">
           <CarouselContent>
-            {slides.map((slide) => (
-              <CarouselItem key={slide.title}>
-                <div
-                  className={`aspect-video bg-linear-to-b ${slide.className}`}
-                />
+            {slides.map((slide, index) => (
+              <CarouselItem key={index}>
+                <div className={`aspect-video bg-linear-to-r ${slide}`} />
               </CarouselItem>
             ))}
           </CarouselContent>
